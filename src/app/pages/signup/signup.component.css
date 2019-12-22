@@ -1,0 +1,22 @@
+.signup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+}
+
+.card {
+  width: 80%;
+  max-width: 360px;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+}
+
+.back {
+  text-align: right;
+}

@@ -13,35 +13,23 @@ export class AuthenticationService {
     this.user = angularFireAuth.authState;
   }
 
-  SignUp(email: string, password: string) {
-    this.angularFireAuth
+  async signUp(email: string, password: string) {
+    return this.angularFireAuth
       .auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      .createUserWithEmailAndPassword(email, password);
   }
 
-  SignIn(email: string, password: string) {
-    this.angularFireAuth
+  async signIn(email: string, password: string) {
+    return this.angularFireAuth
       .auth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      .signInWithEmailAndPassword(email, password);
   }
 
-  async SignInGoogle() {
+  async signInGoogle() {
     return this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  SignOut() {
+  signOut() {
     this.angularFireAuth
       .auth
       .signOut();

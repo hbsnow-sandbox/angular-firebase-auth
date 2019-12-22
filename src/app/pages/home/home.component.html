@@ -1,4 +1,4 @@
-<div *ngIf="authenticationService.user | async as user; else showLogin">
+<div *ngIf="authenticationService.user | async as user">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>気圧チェッカー</span>
@@ -17,28 +17,3 @@
     </mat-select>
   </mat-form-field>
 </div>
-
-<ng-template #showLogin>
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>気圧チェッカー</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput placeholder="email" [type]="text" [(ngModel)]="email">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="password" [type]="password" [(ngModel)]="password">
-        </mat-form-field>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary" (click)="signIn()">サインイン</button>
-        <button mat-flat-button color="primary" (click)="signInGoogle()">Googleでサインイン</button>
-      </mat-card-actions>
-      <mat-card-footer>
-        <button mat-button color="primary" (click)="signUp()">アカウント作成</button>
-      </mat-card-footer>
-    </mat-card>
-  </div>
-</ng-template>

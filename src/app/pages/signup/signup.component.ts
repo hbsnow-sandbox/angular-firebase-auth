@@ -9,13 +9,19 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class SignupComponent implements OnInit {
   email: string;
   password: string;
+  signup = false;
 
   constructor(public authenticationService: AuthenticationService) {}
 
   ngOnInit() {
   }
 
-  signUp() {
-    this.authenticationService.SignUp(this.email, this.password);
+  async signUp() {
+    try {
+      await this.authenticationService.signUp(this.email, this.password);
+      this.signup = true;
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
