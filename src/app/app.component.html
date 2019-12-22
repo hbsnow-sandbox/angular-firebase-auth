@@ -1,13 +1,1 @@
-<div *ngIf="authenticationService.user | async as user; else showLogin">
-  <p>{{ user?.email }} でログイン中</p>
-  <button (click)="signOut()" *ngIf="user">ログアウト</button>
-</div>
-
-<ng-template #showLogin>
-  <p><label>email: <input type="text" [(ngModel)]="email" placeholder="email"></label></p>
-  <p><label>password: <input type="password" [(ngModel)]="password" placeholder="password"></label></p>
-
-  <p><button (click)="signUp()">サインアップ</button></p>
-  <p><button (click)="signIn()">サインイン</button></p>
-  <p><button (click)="signInGoogle()">Googleでサインイン</button></p>
-</ng-template>
+<router-outlet></router-outlet>

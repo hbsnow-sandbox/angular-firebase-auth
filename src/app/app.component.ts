@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from './shared/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +7,13 @@ import { AuthenticationService } from './shared/authentication.service';
 })
 export class AppComponent {
   title = 'angular-firebase-auth';
-  email: string;
-  password: string;
 
-  constructor(public authenticationService: AuthenticationService) {}
+  prefs = [
+    {value: '2128295', viewValue: '札幌'},
+    {value: '1850147', viewValue: '東京'},
+    {value: '1853908', viewValue: '大阪'},
+    {value: '1863958', viewValue: '福岡'}
+  ];
 
-  signUp() {
-    this.authenticationService.SignUp(this.email, this.password);
-  }
-
-  signIn() {
-    this.authenticationService.SignIn(this.email, this.password);
-  }
-
-  signInGoogle() {
-    this.authenticationService.SignInGoogle();
-  }
-
-  signOut() {
-    this.authenticationService.SignOut();
-  }
+  constructor() {}
 }

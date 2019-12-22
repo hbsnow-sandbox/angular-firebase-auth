@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="signin">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>気圧チェッカー</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="signin-default">
+        <mat-form-field class="form-field">
+          <input matInput placeholder="email" [(ngModel)]="email">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput placeholder="password" [type]="password" [(ngModel)]="password">
+        </mat-form-field>
+        <div class="form-action">
+          <button mat-flat-button color="primary" (click)="signIn()">サインイン</button>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <div class="signin-other">
+        <p>その他のサービスでサインイン</p>
+        <div class="form-action">
+          <button mat-flat-button color="primary" (click)="signInGoogle()">Googleでサインイン</button>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions>
+      <div class="signup">
+        <a mat-button color="primary" routerLink="/signup">アカウント作成</a>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

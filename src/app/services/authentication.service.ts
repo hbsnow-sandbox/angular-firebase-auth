@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { auth } from 'firebase/app';
 
@@ -9,7 +9,7 @@ import { auth } from 'firebase/app';
 export class AuthenticationService {
   user: Observable<firebase.User>;
 
-  constructor(private angularFireAuth: AngularFireAuth) {
+  constructor(public angularFireAuth: AngularFireAuth) {
     this.user = angularFireAuth.authState;
   }
 
@@ -37,16 +37,8 @@ export class AuthenticationService {
       });
   }
 
-  SignInGoogle() {
-    this.angularFireAuth
-      .auth
-      .signInWithPopup(new auth.GoogleAuthProvider())
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  async SignInGoogle() {
+    return this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
   SignOut() {
