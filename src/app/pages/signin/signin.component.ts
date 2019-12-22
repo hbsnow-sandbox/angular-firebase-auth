@@ -12,10 +12,6 @@ export class SigninComponent implements OnInit {
   email: string;
   password: string;
 
-  emailFormControl = new FormControl('', [
-    Validators.email,
-  ]);
-
   constructor(private router: Router, public authenticationService: AuthenticationService) {}
 
   ngOnInit() {
