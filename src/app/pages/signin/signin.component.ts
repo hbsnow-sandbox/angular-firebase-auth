@@ -22,7 +22,7 @@ export class SigninComponent implements OnInit {
       await this.authenticationService.signIn(this.email, this.password);
       this.router.navigate(['/']);
     } catch (err) {
-      console.error(`ログインに失敗しました: ${err}`);
+      console.error(`サインインに失敗しました: ${err}`);
     }
   }
 
@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
       await this.authenticationService.signInGoogle();
       this.router.navigate(['/']);
     } catch (err) {
-      console.error(`ログインに失敗しました: ${err}`);
+      console.error(`サインインに失敗しました: ${err}`);
     }
   }
 }

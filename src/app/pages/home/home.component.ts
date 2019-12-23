@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,12 +16,20 @@ export class HomeComponent implements OnInit {
     {value: '1863958', viewValue: '福岡'}
   ];
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(private router: Router, public authenticationService: AuthenticationService) {}
 
   ngOnInit() {
   }
 
-  signOut() {
-    this.authenticationService.signOut();
+  async signOut() {
+    try {
+      await this.authenticationService.signOut();
+      this.router.navigate(['/']);
+    } catch (err) {
+      console.error(`サインアウトに失敗しました: ${err}`);
+    }
+  }
+
+  submit() {
   }
 }

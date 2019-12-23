@@ -14,24 +14,18 @@ export class AuthenticationService {
   }
 
   async signUp(email: string, password: string) {
-    return this.angularFireAuth
-      .auth
-      .createUserWithEmailAndPassword(email, password);
+    return this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   async signIn(email: string, password: string) {
-    return this.angularFireAuth
-      .auth
-      .signInWithEmailAndPassword(email, password);
+    return this.angularFireAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   async signInGoogle() {
     return this.angularFireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
-  signOut() {
-    this.angularFireAuth
-      .auth
-      .signOut();
+  async signOut() {
+    return this.angularFireAuth.auth.signOut();
   }
 }
