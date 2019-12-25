@@ -1,34 +1,31 @@
-<div *ngIf="authenticationService.user | async as user">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>気圧チェッカー</span>
-      <span class="spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>気圧チェッカー</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="signOut()">
+        <span>サインアウト</span>
       </button>
-      <mat-menu #menu="matMenu">
-        <div mat-menu-item disabled>
-          <span class="name">{{ user?.displayName }}</span>
-        </div>
-        <mat-divider></mat-divider>
-        <button mat-menu-item (click)="signOut()">
-          <span>サインアウト</span>
-        </button>
-      </mat-menu>
+    </mat-menu>
 
-    </mat-toolbar-row>
-  </mat-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-  <div class="pref">
-    <mat-form-field>
-      <mat-label>地域</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let pref of prefs" [value]="pref.value">
-          {{ pref.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-flat-button color="primary" (click)="submit()">決定</button>
-  </div>
+<div class="container">
+  <mat-form-field>
+    <mat-label>地域</mat-label>
+    <mat-select [(ngModel)]="selectedPref">
+      <mat-option *ngFor="let pref of prefs" [value]="pref.value">
+        {{ pref.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="submit()">決定</button>
 </div>
+
+{{ weather?.weather[0].main }}
+{{ weather?.main.pressure }}
 

@@ -11,7 +11,7 @@ export class SignupComponent implements OnInit {
   password: string;
   signup = false;
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
   }

@@ -15,6 +15,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   MatFormFieldModule,
@@ -52,7 +53,8 @@ import {
     MatSelectModule,
     MatCardModule,
     MatDividerModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [ AuthenticationService, AngularFireAuthGuard ],
   bootstrap: [ AppComponent ]

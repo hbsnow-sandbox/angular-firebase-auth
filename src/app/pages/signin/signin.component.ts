@@ -12,7 +12,7 @@ export class SigninComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private router: Router, public authenticationService: AuthenticationService) {}
+  constructor(private router: Router, private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
   }
