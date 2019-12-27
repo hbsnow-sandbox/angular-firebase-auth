@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  get weatherClassName() {
+    return this.weather ? this.weather.weather[0].main : '';
+  }
+
   async signOut() {
     try {
       await this.authenticationService.signOut();
