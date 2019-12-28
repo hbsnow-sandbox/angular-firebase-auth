@@ -1,49 +1,12 @@
 <div fxLayout="column" fxFill>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>気圧チェッカー</span>
-      <span class="spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu button">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="signOut()">
-          <span>サインアウト</span>
-        </button>
-      </mat-menu>
-
-    </mat-toolbar-row>
-  </mat-toolbar>
-
-  <div class="container">
-    <div class="form">
-      <div class="input">
-        <mat-form-field>
-          <mat-label>地域</mat-label>
-          <mat-select [(ngModel)]="selectedPref">
-            <mat-option *ngFor="let pref of prefs" [value]="pref.value">
-              {{ pref.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="submit">
-        <button mat-flat-button color="primary" (click)="submit()">決定</button>
-      </div>
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="body" fxFlex>
+    <div fxLayout="column" fxFill>
+      <app-city></app-city>
+      <mat-divider></mat-divider>
+      <app-weather fxFlex></app-weather>
     </div>
   </div>
-
-  <mat-divider></mat-divider>
-
-  <ng-container *ngIf="weather; else elseBlock">
-    <div fxFlex class="weather" [ngClass]="weather?.weather[0].main">
-      {{ weather.main.pressure }}
-    </div>
-  </ng-container>
-
-  <ng-template #elseBlock>
-    <div class="container">
-      <p>地域を選択してください。</p>
-    </div>
-  </ng-template>
 </div>

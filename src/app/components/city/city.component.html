@@ -1,0 +1,17 @@
+<app-container [ngClass]="{'isDarkMode': isDarkMode}">
+  <div class="form">
+    <div class="input">
+      <mat-form-field>
+        <mat-label>地域</mat-label>
+        <mat-select [(ngModel)]="selectedCityValue">
+          <mat-option *ngFor="let city of cities" [value]="city.value">
+            {{ city.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="submit">
+      <button mat-flat-button color="primary" (click)="submit()">決定</button>
+    </div>
+  </div>
+</app-container>

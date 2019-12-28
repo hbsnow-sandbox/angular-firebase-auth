@@ -1,4 +1,10 @@
-export type weather = {
+export type City = {
+  value: string;
+  viewValue: string;
+  image: string;
+}
+
+export type Weather = {
   "coord": {
     "lon": number,
     "lat": number

@@ -1,0 +1,27 @@
+.weather {
+  min-height: 100%;
+  color: #fff;
+  background: rgb(223,223,223);
+  background: linear-gradient(180deg, rgba(223,223,223,1) 0%, rgba(117,117,117,1) 100%);
+  padding: 1rem;
+}
+
+.weather.Clear {
+  background: rgb(255,175,111);
+  background: linear-gradient(180deg, rgba(255,175,111,1) 0%, rgba(255,113,0,1) 100%);
+}
+
+.weather.Rain,
+.weather.Thunderstorm {
+  background: rgb(161,136,255);
+  background: linear-gradient(180deg, rgba(161,136,255,1) 0%, rgba(53,0,255,1) 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 980px;
+}
+
+.cityImage {
+  margin-bottom: 0;
+}

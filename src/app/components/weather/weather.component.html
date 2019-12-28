@@ -1,0 +1,23 @@
+<ng-container *ngIf="weather; else elseBlock">
+  <div class="weather" [ngClass]="weather.weather[0].main">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{ city.viewValue }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="city.image" class="cityImage" />
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <div mat-line>気圧: {{ weather.main.pressure }}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-template #elseBlock>
+  <app-container>
+    <p>地域を選択してください。</p>
+  </app-container>
+</ng-template>

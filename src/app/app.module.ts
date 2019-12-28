@@ -28,13 +28,21 @@ import {
   MatCardModule,
   MatDividerModule
 } from '@angular/material';
+import { CityComponent } from './components/city/city.component';
+import { WeatherComponent } from './components/weather/weather.component';
+import { ContainerComponent } from './components/container/container.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    CityComponent,
+    WeatherComponent,
+    ContainerComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
